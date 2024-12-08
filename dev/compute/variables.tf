@@ -35,7 +35,7 @@ variable "remote_data_sources" {
   }))
   default = {
     network = {
-      bucket = "backend-jcaranay-tf"
+      bucket = "backend-jcaranay-tfm"
       key    = "dev/networking/terraform.tfstate"
       region = "us-east-1"
     }

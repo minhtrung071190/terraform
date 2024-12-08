@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "backend-jcaranay-tf"
+    bucket = "backend-jcaranay-tfm"
     key    = "dev/compute/terraform.tfstate"
     region = "us-east-1"
   }
