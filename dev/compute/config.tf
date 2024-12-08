@@ -14,7 +14,7 @@ terraform {
 
   required_version = ">= 0.13" # Ensure you're using Terraform 0.13 or newer
 }
-
+#
 provider "aws" {
   region = "us-east-1" # Change to your preferred AWS region
 }
