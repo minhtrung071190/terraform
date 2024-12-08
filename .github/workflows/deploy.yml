@@ -60,7 +60,14 @@ jobs:
         run: terraform validate -no-color
         working-directory: ${{ matrix.dir }}
 
-    
+      - name: create ssh key
+        run: |
+         sudo mkdir -p ${{ github.workspace }}/dev/compute/key_pairs
+         echo "${{ secrets.SSH_PUBLIC_PK }}" > ${{ github.workspace }}/dev/compute/key_pairs/public_kp.pub
+         echo "${{ secrets.SSH_PUBLIC_PK }}" > ${{ github.workspace }}/dev/compute/key_pairs/private_kp.pub         
+         sudo chmod 600 public_kp.pub
+         sudo chmod 600 private_kp.pub
+
       - name: Terraform Plan
         id: plan
         run: terraform plan -input=false -no-color -out tf.plan
