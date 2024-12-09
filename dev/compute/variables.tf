@@ -6,7 +6,7 @@ variable "default_tags" {
   type        = map(any)
   description = "Default tags to be applied to all AWS resources"
 }
-###
+
 variable "namespace" {
   type    = string
   default = "GroupX"
