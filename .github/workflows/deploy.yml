@@ -129,11 +129,11 @@ jobs:
         working-directory: ${{ matrix.dir }} # Use your environment folder
         shell: bash
 
-      - name: Notify Ansible Repository
-        if: github.ref == 'refs/heads/prod' && github.event_name == 'push'
+      - name: Notify Ansible Workflow
+        if: success()
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           repository: minhtrung071190/ansible
           event-type: terraform_complete
           client-payload: '{"environment": "prod"}'
