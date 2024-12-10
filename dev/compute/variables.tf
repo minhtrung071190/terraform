@@ -63,7 +63,7 @@ variable "bastion_hosts" {
       key_name      = "pub_kp"
       sg_key        = "bh1"
       has_user_data = true
-      user_data     = "/home/runner/work/terraform/terraform/dev/compute/user_data/install_httpd.sh"
+      user_data     = "../user_data/install_httpd.sh"
       custom_tags   = null
     }
   }
@@ -352,7 +352,7 @@ variable "launch_templates" {
       name            = "Webserver-Launch-Template"
       instance_type   = "t2.micro"
       key_name        = "pub_kp"
-      user_data       = "/home/runner/work/terraform/terraform/dev/compute/user_data/install_httpd.sh"
+      user_data       = "../user_data/install_httpd.sh"
       security_groups = ["webserver"]
       tags = {
         Name = "Webserver Launch Template"
