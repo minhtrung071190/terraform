@@ -68,7 +68,7 @@ variable "bastion_hosts" {
     }
   }
 }
-
+#
 variable "public_instances" {
   type = map(object({
     name          = string
